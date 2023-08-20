@@ -1,4 +1,4 @@
-package algo;
+package Programmers;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class test {
+public class BOJ_2021_최소환승경로 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st;
 	static int N,L;

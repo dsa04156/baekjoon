@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Algorithm_Study/jinuk"/>
+	<classpathentry kind="src" path="Algorithm_Study/minjae/backtracking"/>
+	<classpathentry kind="src" path="Algorithm_Study/minjae/bfs"/>
+	<classpathentry kind="src" path="Algorithm_Study/minjae/dp"/>
+	<classpathentry kind="src" path="Algorithm_Study/minjae/simulation"/>
+	<classpathentry kind="src" path="java/src"/>
+	<classpathentry kind="output" path="java/bin"/>
+</classpath>
