@@ -1,6 +1,7 @@
+package BOJ;
 import java.io.*;
 import java.util.*;
-class Main {
+class BOJ_1005_ACMCraft {
 	static int N,K,W;
 	static int[] building;
 	static int[] indegree;
