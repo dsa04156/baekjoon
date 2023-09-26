@@ -1,6 +1,7 @@
+package BOJ;
 import java.io.*;
 import java.util.*;
-class Main {
+class BOJ_2573_빙산 {
 	static int stoi(String s) {
 		return Integer.parseInt(s);
 	}
