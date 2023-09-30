@@ -1,6 +1,7 @@
+package BOJ;
 import java.io.*;
 import java.util.*;
-class Main {
+class BOJ_2146_다리만들기 {
 	static int stoi(String s) {
 		return Integer.parseInt(s);
 	}
