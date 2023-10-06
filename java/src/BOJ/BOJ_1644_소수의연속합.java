@@ -10,6 +10,7 @@ public class BOJ_1644_소수의연속합 {
 		ArrayList<Integer> list = new ArrayList<>();
 		boolean[] v= new boolean[N+1];
 		if(N==1) {
+			
 			System.out.println(0);
 			return;
 		}
