@@ -1,6 +1,7 @@
+package Programmers;
 import java.io.*;
 import java.util.*;
-class Main {
+class Prog_스티커모으기2 {
 	public static void main(String[] args) throws IOException{
 		Solution s = new Solution();
 		s.solution(new int[] {14, 6, 5, 11, 3, 9, 2, 10});
