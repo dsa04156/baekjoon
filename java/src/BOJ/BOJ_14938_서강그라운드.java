@@ -1,6 +1,7 @@
+package BOJ;
 import java.io.*;
 import java.util.*;
-class Main {
+class BOJ_14938_서강그라운드 {
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
