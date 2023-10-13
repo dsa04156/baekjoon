@@ -1,6 +1,7 @@
+package BOJ;
 import java.io.*;
 import java.util.*;
-class Main {
+class BOJ_1707_이분그래프 {
 	static ArrayList<ArrayList<Integer>> list;
 	static int[] color;
 	public static void main(String[] args) throws IOException{
