@@ -26,7 +26,7 @@ public class CodingTest_Oliveyoung_3 {
 				if(i==0&&folders[j][1].equals("root")) {
 					arr[i][j]=1;
 				}
-				if(i>0&&folders[j][1].equals(arr))
+				if(i>0&&folders[j][1].equals(arr));
 			}
 		}
 		
