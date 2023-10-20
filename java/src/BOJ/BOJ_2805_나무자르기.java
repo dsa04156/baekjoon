@@ -1,9 +1,12 @@
-/* package 구문을 넣으면 안됩니다 */
+package BOJ;/* package 구문을 넣으면 안됩니다 */
 
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
-public class Main {
+public class BOJ_2805_나무자르기 {
 
     //표준입력을 수행할 Scanner를 선언한다
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
