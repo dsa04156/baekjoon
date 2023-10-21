@@ -1,7 +1,13 @@
-import java.util.*;
-import java.io.*;
+package test;
 
-public class Main {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class leetCode_2592_MaximizeGreatnessOfAnArray {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) throws IOException {
