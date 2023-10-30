@@ -7,6 +7,7 @@ import java.util.Stack;
 import java.util.StringTokenizer;
 
 class BOJ_2493_탑 {
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
