@@ -42,6 +42,8 @@ public class BookStack {
         return minForce;
     }
 
+
+
     public static void main(String[] args) {
         int[] orders = {1, 2, 1, 3, 3, 2};
         System.out.println(getMinimumForce(orders));
