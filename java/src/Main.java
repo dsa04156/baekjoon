@@ -27,6 +27,8 @@ class Main {
         if(cnt<round){
             cnt = round;
         }
+
+
         if(list.size()<1||index>=cards.length) return;
         int a = cards[index];
         int b = cards[index+1];
