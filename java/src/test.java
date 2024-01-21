@@ -11,6 +11,7 @@ public class test {
     {
     	Solution s = new Solution();
     	int[][] dice = new int[][]{{1, 2, 3, 4, 5, 6}, {2, 2, 4, 4, 6, 6}};
+		Queue<Integer> q = new LinkedList<>();
 
     	System.out.println(Arrays.toString(s.solution(dice)));
     	

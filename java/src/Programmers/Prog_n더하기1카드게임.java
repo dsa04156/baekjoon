@@ -1,6 +1,8 @@
-import java.util.*;
+package Programmers;
 
-class Solution {
+import java.util.ArrayList;
+
+class Prog_n더하기1카드게임 {
 
     public static void main(String[] args) {
 
