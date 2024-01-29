@@ -1,4 +1,6 @@
-class Solution {
+package Programmers;
+
+class Prog_PCCP_다시_아날로그시계 {
 
     public static void main(String[] args) {
         System.out.println(solution(11,58,59,11,59,0));
