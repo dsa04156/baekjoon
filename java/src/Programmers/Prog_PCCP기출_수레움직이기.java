@@ -3,7 +3,7 @@ package Programmers;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-class Prog_PCCP_수레움직이기 {
+class Prog_PCCP기출_수레움직이기 {
 
     public static void main(String[] args) {
         System.out.println(solution(new int[][]{{1,4},{0,0},{2,3}}));
