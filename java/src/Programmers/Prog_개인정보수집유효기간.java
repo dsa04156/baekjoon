@@ -1,7 +1,9 @@
+package Programmers;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
-class Solution {
+class Prog_개인정보수집유효기간 {
 
 
     public static void main(String[] args) throws IOException {
