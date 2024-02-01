@@ -1,7 +1,9 @@
+package Programmers;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
-class Solution {
+class Prog_미로탈출명령어 {
 
 
     static int[] parent;
