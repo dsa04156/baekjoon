@@ -1,4 +1,4 @@
-package BOJ;
+package Programmers;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 
-class Main {
+class Prog_다단계칫솔판매 {
     static int[] parent;
 
     public static void main(String[] args) throws IOException {

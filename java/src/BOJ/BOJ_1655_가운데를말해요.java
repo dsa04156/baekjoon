@@ -1,39 +1,38 @@
-package BOJ;/* package 구문을 넣으면 안됩니다 */
+package BOJ;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.PriorityQueue;
 
-public class BOJ_1655_가운데를말해요 {
-
-    //표준입력을 수행할 Scanner를 선언한다 
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-    public static void main(String[] args) throws IOException {   //프로그램의 시작부
+class BOJ_1655_가운데를말해요 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        PriorityQueue<Integer> minPq = new PriorityQueue<>((o1,o2)->o1-o2);
-        PriorityQueue<Integer> maxPq = new PriorityQueue<>((o1,o2)->o2-o1);
+        PriorityQueue<Integer> MaxPq = new PriorityQueue<>((o1,o2) -> o1-o2 );
+        PriorityQueue<Integer> MinPq = new PriorityQueue<>((o1,o2) -> o2-o1);
+
         StringBuilder sb = new StringBuilder();
-        for(int i=1;i<=N;i++){
-            int a = Integer.parseInt(br.readLine());
-            if(minPq.size()==maxPq.size()){
-                maxPq.add(a);
-            }else{
-                minPq.add(a);
-            }
-            if(!minPq.isEmpty()&&!maxPq.isEmpty()){
-                if(minPq.peek()<maxPq.peek()){
-                    int tmp = minPq.poll();
-                    minPq.add(maxPq.poll());
-                    maxPq.add(tmp);
+        for(int i=0;i<N;i++){
+            int x = Integer.parseInt(br.readLine());
+            if(MinPq.size()==MaxPq.size())
+                MinPq.add(x);
+            else
+                MaxPq.add(x);
+
+            if(!MinPq.isEmpty() && !MaxPq.isEmpty()){
+                if(MinPq.peek()>MaxPq.peek()){
+                    int tmp = MinPq.poll();
+                    MinPq.add(MaxPq.poll());
+                    MaxPq.add(tmp);
                 }
             }
-            sb.append(maxPq.peek()+"\n");
-
+            sb.append(MinPq.peek()+"\n");
         }
         System.out.println(sb);
 
+
     }
+
 
 }
