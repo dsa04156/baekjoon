@@ -18,6 +18,7 @@ class Prog_다단계칫솔판매 {
 
     }
 
+
         public static int[] solution(String[] enroll, String[] referral, String[] seller, int[] amount) {
             int[] answer = new int[enroll.length];
             Map<String, String> map = new HashMap<>();
