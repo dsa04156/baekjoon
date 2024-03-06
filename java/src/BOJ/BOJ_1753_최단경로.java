@@ -1,3 +1,5 @@
+package BOJ;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -6,7 +8,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-class Main {
+class BOJ_1753_최단경로 {
 
 	static int[] answer;
 
@@ -61,25 +63,7 @@ class Main {
 			}
 
 		}
-		// boolean[] v = new boolean[V + 1];
-		// answer[K] = 0;
-		// for (int i = 0; i < V; i++) {
-		// 	int nodeValue = Integer.MAX_VALUE;
-		// 	int nodeIdx = 0;
-		// 	for (int j = 1; j < V + 1; j++) {
-		// 		if (!v[j] && answer[j] < nodeValue) {
-		// 			nodeIdx = j;
-		// 			nodeValue = answer[j];
-		// 		}
-		// 	}
-		// 	v[nodeIdx] = true;
-		// 	for (int j = 0; j < list.get(nodeIdx).size(); j++) {
-		// 		Node adjNode = list.get(nodeIdx).get(j);
-		// 		if (answer[adjNode.idx] > answer[nodeIdx] + adjNode.cost) {
-		// 			answer[adjNode.idx] = answer[nodeIdx] + adjNode.cost;
-		// 		}
-		// 	}
-		// }
+
 		for (int i = 1; i < V + 1; i++) {
 			if (answer[i] == Integer.MAX_VALUE)
 				System.out.println("INF");
