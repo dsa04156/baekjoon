@@ -1,3 +1,5 @@
+package BOJ;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -5,7 +7,7 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-class Main {
+class BOJ_1238_파티 {
 	static ArrayList<ArrayList<Node>> list;
 	static int[] cost;
 	static int max = Integer.MIN_VALUE;

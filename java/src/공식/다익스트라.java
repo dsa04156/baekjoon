@@ -4,102 +4,86 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-class 다익스트라 {
+public class 다익스트라 {
 
-	static int[] answer;
-
-	static int toInt(String s) {
-		return Integer.parseInt(s);
-	}
+	//각 노드에 연결되어 있는 노드에 대한 정보를 담는 리스트
+	static ArrayList<Node>[] graph;
+	//방문한 적이 있는지 체크하는 목적의 리스트
+	static boolean[] visit;
+	//최단 거리 테이블
+	static int[] dist;
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 
-		int V = toInt(st.nextToken());
-		int E = toInt(st.nextToken());
-		int K = toInt(br.readLine());
-		ArrayList<ArrayList<Node>> list = new ArrayList<>();
+		int v = Integer.parseInt(st.nextToken());
+		int e = Integer.parseInt(st.nextToken());
+		int k = Integer.parseInt(br.readLine());
 
-		for (int i = 0; i < V + 1; i++) {
-			list.add(new ArrayList<>());
+		graph = new ArrayList[v + 1];
+		dist = new int[v + 1];
+		visit = new boolean[v + 1];
+
+		for (int i = 1; i <= v; i++) {
+			graph[i] = new ArrayList<>();
+			dist[i] = Integer.MAX_VALUE; //최대값으로 초기화, 최단거리를 찾기 위함.
 		}
 
-		for (int i = 0; i < E; i++) {
+		for (int i = 0; i < e; i++) {
+			// u -> v 로 가는 가중치 w가 주어진다.
 			st = new StringTokenizer(br.readLine());
-			int u = toInt(st.nextToken());
-			int v = toInt(st.nextToken());
-			int w = toInt(st.nextToken());
-			list.get(u).add(new Node(v, w));
+			int inputU = Integer.parseInt(st.nextToken());
+			int inputV = Integer.parseInt(st.nextToken());
+			int inputW = Integer.parseInt(st.nextToken());
+
+			graph[inputU].add(new Node(inputV, inputW));
 		}
-		int[] answer = new int[V + 1];
-		for (int i = 1; i < V + 1; i++)
-			answer[i] = Integer.MAX_VALUE;
 
-		PriorityQueue<Node> pq = new PriorityQueue<>(new Comparator<Node>() {
-			@Override
-			public int compare(Node o1, Node o2) {
-				return o1.cost - o2.cost;
+		//다익스트라 알고리즘 수행
+		dijkstra(k);
+
+		for (int i = 1; i <= v; i++) {
+			System.out.println(dist[i] == Integer.MAX_VALUE ? "INF" : dist[i]);
+		}
+	}
+
+	static void dijkstra(int start) {
+		//우선 순위 큐 사용, 가중치를 기준으로 오름차순한다.
+		PriorityQueue<Node> q = new PriorityQueue<>((o1, o2) -> o1.cost - o2.cost);
+		//시작 노드에 대해서 초기화
+		q.add(new Node(start, 0));
+		dist[start] = 0;
+
+		while (!q.isEmpty()) {
+			//현재 최단 거리가 가장 짧은 노드를 꺼내서 방문 처리 한다.
+			Node now = q.poll();
+
+			if (!visit[now.v]) {
+				visit[now.v] = true;
 			}
-		});
-		pq.add(new Node(K, 0));
-		boolean[] v = new boolean[V + 1];
-		answer[K] = 0;
-		while (!pq.isEmpty()) {
-			Node n = pq.poll();
 
-			if (v[n.idx])
-				continue;
-			v[n.idx] = true;
-			for (Node next : list.get(n.idx)) {
-				if (!v[next.idx] && answer[next.idx] > answer[n.idx] + next.cost) {
-					answer[next.idx] = answer[n.idx] + next.cost;
-					pq.add(new Node(next.idx, answer[next.idx]));
+			for (Node next : graph[now.v]) {
+
+				//방문하지 않았고, 현재 노드를 거쳐서 다른 노드로 이동하는 거리가 더 짧을 경우
+				if (!visit[next.v] && dist[next.v] > now.cost + next.cost) {
+					dist[next.v] = now.cost + next.cost;
+					q.add(new Node(next.v, dist[next.v]));
 				}
 			}
-
 		}
-		// boolean[] v = new boolean[V + 1];
-		// answer[K] = 0;
-		// for (int i = 0; i < V; i++) {
-		// 	int nodeValue = Integer.MAX_VALUE;
-		// 	int nodeIdx = 0;
-		// 	for (int j = 1; j < V + 1; j++) {
-		// 		if (!v[j] && answer[j] < nodeValue) {
-		// 			nodeIdx = j;
-		// 			nodeValue = answer[j];
-		// 		}
-		// 	}
-		// 	v[nodeIdx] = true;
-		// 	for (int j = 0; j < list.get(nodeIdx).size(); j++) {
-		// 		Node adjNode = list.get(nodeIdx).get(j);
-		// 		if (answer[adjNode.idx] > answer[nodeIdx] + adjNode.cost) {
-		// 			answer[adjNode.idx] = answer[nodeIdx] + adjNode.cost;
-		// 		}
-		// 	}
-		// }
-		for (int i = 1; i < V + 1; i++) {
-			if (answer[i] == Integer.MAX_VALUE)
-				System.out.println("INF");
-			else
-				System.out.println(answer[i]);
-		}
-
 	}
 
 	static class Node {
-		int idx;
-		int cost;
+		int v; //간선
+		int cost; //가중치
 
-		public Node(int idx, int cost) {
-			this.idx = idx;
+		public Node(int v, int cost) {
+			this.v = v;
 			this.cost = cost;
 		}
 	}
 }
-
-
